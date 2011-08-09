@@ -1,4 +1,4 @@
-<?php
+<?
 
 include "../config_db.php";
 
@@ -19,7 +19,7 @@ $indb = isset($_GET['indb']) ? htmlentities(addslashes($_GET['indb'])) : '';
 </head>
 <body id="babout">
 	<div id="header">
-		<h1>PHPspeed Install | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed Install | <? echo $_SERVER['HTTP_HOST']; ?></h1>
 	</div>
 	<div id="fullpage">
 		<div id="content">
@@ -28,15 +28,15 @@ $indb = isset($_GET['indb']) ? htmlentities(addslashes($_GET['indb'])) : '';
 			<img src="../inc/images/reddot.png" align="middle"> Edit your <b>config_db.php</b> file before going to the next step. (You must manually make these changes)<br /><br />
 			<table cellpadding="4" width="500">
 				  <tr><th>DEFAULT SETTINGS</th><th>YOUR CURRENT SETTINGS</th></tr>
-				  <tr><td>$dbhost = "localhost";</td><td>$dbhost = "<?php echo "$dbhost"; ?>";<?php if ($dbhost == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
-				 <tr><td>$dbuname = "";</td><td>$dbuname = "<?php echo "$dbuname"; ?>"; <?php if ($dbuname == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
-				 <tr><td>$dbpass = "";</td><td>$dbpass = "<?php if ($dbpass != "" ) {echo "<small>hidden</small>"; } else { echo "$dbpass"; } ?>";<?php if ($dbpass == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
-				 <tr><td>$dbname = "phpspeed";</td><td>$dbname = "<?php echo "$dbname"; ?>";<?php if ($dbname == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
+				  <tr><td>$dbhost = "localhost";</td><td>$dbhost = "<? echo "$dbhost"; ?>";<? if ($dbhost == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
+				 <tr><td>$dbuname = "";</td><td>$dbuname = "<? echo "$dbuname"; ?>"; <? if ($dbuname == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
+				 <tr><td>$dbpass = "";</td><td>$dbpass = "<? if ($dbpass != "" ) {echo "<small>hidden</small>"; } else { echo "$dbpass"; } ?>";<? if ($dbpass == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
+				 <tr><td>$dbname = "phpspeed";</td><td>$dbname = "<? echo "$dbname"; ?>";<? if ($dbname == "") { echo "<font color='red'><small>&nbsp;&nbsp;&nbsp;&laquo;&nbsp;EMPTY!!</small></font>"; } ?></td></tr>
 			</table>
 			<br />
 			<img src="../inc/images/reddot.png" align="middle"> After your config_db.php file is properly configured, we need to create a new MySQL database <a href="install.php?indb=1">&raquo; Install Now</a><br />
 
-<?php
+<?
 if ($indb == "1") {
 	$con = mysql_connect("$dbhost","$dbuname","$dbpass");
 	if (!$con) {
@@ -57,7 +57,7 @@ if ($indb == "1") {
 			<br />
 			<img src="../inc/images/reddot.png" align="middle"> Once your database is created (or you chose an exiting DB), this step will create the necessary DB tables <a href="install.php?indb=2">&raquo; Import Now</a><br />
 
-<?php
+<?
 if ($indb == "2") {
 	$con = mysql_connect("$dbhost","$dbuname","$dbpass");
 	if (!$con) { die('Could not connect: ' . mysql_error()); }

@@ -1,4 +1,4 @@
-<?php
+<?
 
 /***************************************************************************
  *
@@ -19,8 +19,8 @@ $pass = "pass";
 
 //Enter your MySQL connection information below
 $dbhost = "localhost";
-$dbuname = "phpspeed";
-$dbpass = "";
+$dbuname = "ENTERYOURDBUSERNAME";
+$dbpass = "ENTERYOURPASSWORD";
 
 //This is the DB where all of the config and results data will be stored
 $dbname = "phpspeed";

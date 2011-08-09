@@ -1,4 +1,5 @@
-<?php
+<?
+
 define('IN_PHPSPEED', true);
 
 include "config_db.php";
@@ -144,19 +145,19 @@ if ($csv == 'yes') {
 <table width="97%" cellspacing="0" cellpadding="15" border="0" align="center">
 	  <tr>
 		<td>
-			<span class="maintitle">PHPspeed <?php echo $ver['version']; ?></span><br />
+			<span class="maintitle">PHPspeed <? echo $ver['version']; ?></span><br />
                      <span class="mainmenu"><a href="index.php">Home</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="phpinfo.php">PHP Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="mysql.php">MySQL Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="info.php">System Info</a></span>
 		</td>
              <td align="right">
-<?php echo $login; ?>
+<? echo $login; ?>
 		</td>
 	 </tr>
 </table>
 
-<?php
+<?
 if (($del == 'yes') && ($conf != '1')) {
 
 	if(isset($_SESSION['logged']) && $_SESSION['logged'] == 'yes') {
@@ -167,12 +168,13 @@ if (($del == 'yes') && ($conf != '1')) {
 
 			      <table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr>
-                                   <td align="left" class="row2"><font color="yellow"> Are you sure you want to delete all results for Test # <?php echo $r; ?>  &nbsp;<a href="benchhistory.php?conf=1&bench=<?php echo $r; ?>"><b>YES</b></a></td>
+                                   <td align="left" class="row2"><font color="yellow"> Are you sure you want to delete all results for Test # <? echo $r; ?>  &nbsp;<a href="benchhistory.php?conf=1&bench=<? echo $r; ?>"><b>YES</b></a></td>
                                 </tr>
 			      </table><br />
 
 
-<?php	} else {
+<?
+	} else {
 		echo "<table width=\"95%\" align=\"center\">
          <tr>
              <td width=\"100%\">
@@ -203,17 +205,17 @@ if (($del == 'yes') && ($conf != '1')) {
                                    <td align="left" class="row2"><font color="yellow">SUCCESS!  All data has been deleted.</td>
                                 </tr>
 			      </table><br />
-<?php
+<?
 
 } else {
 
 ?>
 
-                 <H6>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $t; ?></h6>
+                 <H6>&nbsp;&nbsp;&nbsp;&nbsp;<? echo $t; ?></h6>
 
 			      <table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr>
-                                   <th align="center">Tests Run: <?php echo $num; ?></th><th align="center">Best Score: <?php echo $max; ?></th><th align="center">Avg. Score: <?php echo $avg; ?></th>
+                                   <th align="center">Tests Run: <? echo $num; ?></td><th align="center">Best Score: <? echo $max; ?></td><th align="center">Avg. Score: <? echo $avg; ?></td>
                                 </tr>
 			      </table><br />
 
@@ -221,13 +223,13 @@ if (($del == 'yes') && ($conf != '1')) {
 	        <h6>&nbsp;&nbsp;&nbsp;&nbsp;Last 15 Tests</h6>
 				<table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr><th align="center">Date</th><th align="center">PHPspeed</th><th align="center">PHP</th><th align="center">MySQL</th><th align="center">Tests</th><th align="center">Iterations</th><th align="center">Time</th><th align="center">Score</th></tr>
-<?php
+<?
 while ($row = mysql_fetch_assoc($result)) {
 	echo "<tr><td class=\"row1\">" . date("m/d/y", $row["timestamp"]) . "</td><td class=\"row1\">" . $row["phpspeed_version"] . "</td><td class=\"row1\">" . $row["php_version"] . "</td><td class=\"row1\">" . $row["mysql_version"] . "</td><td class=\"row1\" align=\"center\">" . $row["tests_run"] . "</td><td class=\"row1\" align=\"center\">" . $row["iterations"] . "</td><td class=\"row1\" align=\"center\">" . $row["total_time"] . "</td><td class=\"row1\" align=\"center\">" . $row["score"] . "</td></tr>";
 }
 ?>
 					</table>
-<?php
+<?
 echo "<table width=\"94%\" cellpadding=\"8\" cellspacing=\"1\" class=\"forumline\" align=\"center\">
           <tr>
               <td class=\"row2\" align=\"right\">
