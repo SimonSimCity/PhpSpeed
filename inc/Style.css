@@ -1,0 +1,56 @@
+body { margin: 0; background: #6f6f6f url(images/top.gif) repeat-x; }
+
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+
+a:link,a:active,a:visited { color : #EFEFEF; }
+
+a:hover { text-decoration: underline; color : #D33B3B; }
+
+hr { height: 1px; border: dashed gray 1px; border-top-width: 1px;}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 4px 0; color: #FFFFFF; }
+
+h1 { font-size: 20px; }
+
+h2 { font-size: 18px; }
+
+h6 { font-size: 14px; font-family: Verdana, Arial, Helvetica, sans-serif }
+
+.testoutput { margin: 5px 30px 30px 30px; color: #CCCCCC; background-color: #333333; border: 1px #cccccc dashed; }
+
+.testoutputtext { margin: 7px; color: #EFEFEF; }
+
+.forumline { background-color: #979797; border: 0px #979797 solid; }
+
+td.row1 { color: #D8D8D8; font-size: 12px; background-color: #434343; text-align: center; }
+
+td.row2 { color: #D8D8D8; font-size: 12px; background-color: #434343; }
+
+th { color: #D8D8D8; font-size: 11px; font-weight : bold; background-color: #000000; background: url(images/bg.jpg) repeat; height: 12px; }
+
+.maintitle {font-weight: bold; font-size: 20px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif; text-decoration: none; line-height : 120%; color : #D33B3B; }
+
+.gen { font-size : 12px; }
+
+.genmed { font-size : 11px; }
+
+.gensmall { font-size : 10px; }
+
+.gen,.genmed,.gensmall { color : #FFFFFF; }
+
+.mainmenu { font-size : 12px; color : #FFFFFF; }
+
+a.mainmenu { text-decoration: none; color : #D8D8D8; }
+
+a.mainmenu:hover { color : #FFFFFF; }
+
+input,textarea, select { color : #000000; font: normal 11px Verdana, Arial, Helvetica, sans-serif; border-color : #FFFFFF; }
+
+input.post, textarea.post, select { background-color : #666666; border: 1px; border-style: solid; border-color: #000000; }
+
+input { text-indent : 2px; }
+
+input.button { background-color : #333333; color : #FFFFFF; font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif; border: 1px; border-style: solid; border-color: #000000; }
+
+input.mainoption { background-color:#FAFAFA; font-weight : bold; }
+
