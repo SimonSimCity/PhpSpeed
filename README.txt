@@ -5,7 +5,7 @@ MANUAL SETUP INSTRUCTIONS
 --------------------------------------------------------------------------------
 1) Create a new MySQL DB (you might call it phpspeed)
 2) Import the included phpspeed.sql file to create the tables
-3) Modify the config_db.php file to allow database connection
+3) Copy the config_db.tpl.php file to config_db.php and update the database connection data
 4) You will need to remove the INSTALL folder and all contents
 5) CHMOD the 'test3' folder to 777 for the read/write test
 6) Load the index.php file to start benchmarking
