@@ -1,4 +1,4 @@
-<?
+<?php
 include "../config_db.php";
 ?>
 
@@ -7,7 +7,7 @@ include "../config_db.php";
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></title>
+	<title>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></title>
 	<meta http-equiv="content-language" content="en-us" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
@@ -19,7 +19,7 @@ include "../config_db.php";
 
 	<div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -119,12 +119,12 @@ include "../config_db.php";
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -137,10 +137,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -167,7 +167,7 @@ mysql_close($con);
 	
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -267,12 +267,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -285,10 +285,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -314,7 +314,7 @@ mysql_close($con);
 	</div>
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -414,12 +414,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -432,10 +432,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -461,7 +461,7 @@ mysql_close($con);
 	</div>
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -561,12 +561,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -579,10 +579,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -608,7 +608,7 @@ mysql_close($con);
 	</div>
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -708,12 +708,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -726,10 +726,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -756,7 +756,7 @@ mysql_close($con);
 	
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -856,12 +856,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -874,10 +874,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -903,7 +903,7 @@ mysql_close($con);
 	</div>
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -1003,12 +1003,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -1021,10 +1021,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>
@@ -1050,7 +1050,7 @@ mysql_close($con);
 	</div>
 <div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
 	</div>
 	
@@ -1150,12 +1150,12 @@ mysql_close($con);
 				
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
                                  
 				
 				</ul>
-<?
+<?php
 $con = mysql_connect($dbhost,$dbuname,$dbpass) or die("Cant connect to MySQL");
 mysql_select_db($dbname) or die('Could not select database');
 
@@ -1168,10 +1168,10 @@ mysql_close($con);
 				<h3>Version Info</h3>
 				
 				<ul>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b></li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b></li>
 				</ul>
 
 				<h3>PHPspeed Stats</h3>

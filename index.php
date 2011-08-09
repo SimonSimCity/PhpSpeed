@@ -1,4 +1,4 @@
-<?
+<?php
 /***************************************************************************
 *   PHPspeed.com | PHP Benchmarking Script
 *   http://www.phpspeed.com
@@ -61,7 +61,7 @@ if ($u == "$admin" && $p == "$pass") {
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></title>
+	<title>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></title>
 	<meta http-equiv="content-language" content="en-us" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
@@ -74,14 +74,14 @@ if ($u == "$admin" && $p == "$pass") {
 <table width="97%" cellspacing="0" cellpadding="15" border="0" align="center">
 	  <tr>
 		<td>
-			<span class="maintitle">PHPspeed <? echo $ver['version']; ?></span><br />
+			<span class="maintitle">PHPspeed <?php echo $ver['version']; ?></span><br />
                      <span class="mainmenu"><a href="index.php">Home</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="phpinfo.php">PHP Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="mysql.php">MySQL Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
                                             <a href="info.php">System Info</a></span>
 		</td>
              <td align="right">
-<? echo $login; ?>
+<?php echo $login; ?>
 		</td>
 	 </tr>
 </table>
@@ -95,7 +95,7 @@ if ($u == "$admin" && $p == "$pass") {
              <th>Tests Run</th>
              <th>History</th>
         </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results1 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -112,12 +112,12 @@ $num = mysql_num_rows($result);
                 <b>Synthetic PHP BenchMark:</b> [ <a href="runtests.php">Start Test</a> ]
                 </span>
              </td>
-             <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+             <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=1"><img src="inc/images/view.png" border="0"></a></td>
         </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results2 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -134,12 +134,12 @@ $num = mysql_num_rows($result);
                <b>Synthetic MySQL BenchMark:</b> [ <a href="runtests2.php">Start Test</a> ]
                </span>
              </td>
-             <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+             <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=2"><img src="inc/images/view.png" border="0"></a></td>
         </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results3 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -156,12 +156,12 @@ $num = mysql_num_rows($result);
                  <b>Synthetic Read/Write BenchMark:</b> [ <a href="runtests3.php">Start Test</a> ]
                  </span>
                </td>
-            <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+            <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=3"><img src="inc/images/view.png" border="0"></a></td>
              </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results4 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -178,12 +178,12 @@ $num = mysql_num_rows($result);
                  <b>Real World PHP BenchMark:</b> [ <a href="runtests4.php">Start Test</a> ]
                  </span>
             </td>
-           <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+           <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=4"><img src="inc/images/view.png" border="0"></a></td>
        </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results5 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -200,12 +200,12 @@ $num = mysql_num_rows($result);
                  <b>Real World PHP & MySQL BenchMark:</b> [ <a href="runtests5.php">Start Test</a> ]
                  </span>
               </td>
-        <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+        <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=5"><img src="inc/images/view.png" border="0"></a></td>
         </tr>
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results6 ORDER BY score DESC");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -222,9 +222,9 @@ $num = mysql_num_rows($result);
                  <b>Server Benchmark</b> [ <a href="runtests6.php">Start Test</a> ]
                  </span>
 		</td>
-            <td class="row1"><b><? echo $max; ?></b></td>
-             <td class="row1"><b><? echo $avg; ?></b></td>
-             <td class="row1"><b><? echo $num; ?></b></td>
+            <td class="row1"><b><?php echo $max; ?></b></td>
+             <td class="row1"><b><?php echo $avg; ?></b></td>
+             <td class="row1"><b><?php echo $num; ?></b></td>
              <td class="row1"><a href="benchhistory.php?bench=6"><img src="inc/images/view.png" border="0"></a></td>
         </tr>
 </table>
@@ -232,10 +232,10 @@ $num = mysql_num_rows($result);
 <br />
 <table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
       <tr>
-          <td class="row1">PHP ver: <b><? echo phpversion(); ?></b></td>
-          <td class="row1">MySQL ver: <b><? printf(mysql_get_server_info()); ?></b></td>
-          <td class="row1">Server: <b><? echo $_SERVER['SERVER_SOFTWARE']; ?></b></td>
-          <td class="row1">Last Test: <? echo date("m/d/y", $ver['last_test']) ?></td>
+          <td class="row1">PHP ver: <b><?php echo phpversion(); ?></b></td>
+          <td class="row1">MySQL ver: <b><?php printf(mysql_get_server_info()); ?></b></td>
+          <td class="row1">Server: <b><?php echo $_SERVER['SERVER_SOFTWARE']; ?></b></td>
+          <td class="row1">Last Test: <?php echo date("m/d/y", $ver['last_test']) ?></td>
       </tr>
        <tr>
           <td class="row1"><a href="http://www.phpspeed.com/phpbenchmark.php"><img src="inc/phpspeed.php" vspace="6" border="0" alt="php benchmark"></a></td>

@@ -12,7 +12,7 @@
 <html>
 <body>
 <table><tr><td>
-<?
+<?php
 
 echo "<u>I love PHPspeed!</u> &  <b>I like to breakdance!</b> & <i>I like to do the helicopter!</i> & My eyeballs are sore! & My arse is getting sleepy! & I'm off to sleep now!<br />";
 echo "<u>I love PHPspeed!</u> &  <b>I like to breakdance!</b> & <i>I like to do the helicopter!</i> & My eyeballs are sore! & My arse is getting sleepy! & I'm off to sleep now!<br />";

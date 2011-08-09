@@ -1,4 +1,4 @@
-<?
+<?php
 /***************************************************************************
 *
 *   PHPspeed.com | PHP Benchmarking Script
@@ -63,7 +63,7 @@ if ($u == "$admin" && $p == "$pass"){
 
 <head>
 
-	<title>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?></title>
+	<title>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></title>
 	<meta http-equiv="content-language" content="en-us" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
@@ -77,14 +77,14 @@ if ($u == "$admin" && $p == "$pass"){
 <table width="97%" cellspacing="0" cellpadding="15" border="0" align="center">
    <tr>
 	<td>
-	<span class="maintitle">PHPspeed <? echo $ver['version']; ?></span><br />
+	<span class="maintitle">PHPspeed <?php echo $ver['version']; ?></span><br />
        <span class="mainmenu"><a href="index.php">Home</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
        <a href="phpinfo.php">PHP Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
        <a href="mysql.php">MySQL Info</a>&nbsp;&nbsp;&#149;&nbsp;&nbsp;
        <a href="info.php">System Info</a></span>
        </td>
        <td align="right">
-<? echo $login; ?>
+<?php echo $login; ?>
        </td>
    </tr>
 </table>

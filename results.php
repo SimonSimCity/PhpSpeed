@@ -1,4 +1,4 @@
-<?
+<?php
 /***************************************************************************
  *
  *   PHPspeed.com | PHP Benchmarking Script
@@ -48,7 +48,7 @@ $ver = mysql_fetch_assoc($result);
 
 	<div id="header">
 	
-		<h1>PHPspeed | <? echo $_SERVER['HTTP_HOST']; ?> | DEMO</h1>
+		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?> | DEMO</h1>
 	
 	</div>
 	
@@ -77,7 +77,7 @@ $ver = mysql_fetch_assoc($result);
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results1 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -88,11 +88,11 @@ $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 
 ?>
-                                          Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                          Average Score: <b><? echo $avg; ?></b><br /> 
+                                          Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                          Average Score: <b><?php echo $avg; ?></b><br />
                                           Last 10 Tests: (
 
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results1 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -112,7 +112,7 @@ echo $done;
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">  
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results2 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -122,10 +122,10 @@ $result2 = $db->sql_query("SELECT avg(score) FROM results2");
 $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 ?>						
-							Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                                Average Score: <b><? echo $avg; ?></b><br /> 
+							Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                                Average Score: <b><?php echo $avg; ?></b><br />
                                                 Last 10 Tests: (
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results2 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -145,7 +145,7 @@ echo $done;
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">  
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results3 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -155,10 +155,10 @@ $result2 = $db->sql_query("SELECT avg(score) FROM results3");
 $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 ?>						
-							Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                                Average Score: <b><? echo $avg; ?></b><br /> 
+							Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                                Average Score: <b><?php echo $avg; ?></b><br />
                                                 Last 10 Tests: (
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results3 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -178,7 +178,7 @@ echo $done;
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">  
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results4 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -188,10 +188,10 @@ $result2 = $db->sql_query("SELECT avg(score) FROM results4");
 $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 ?>					
-							Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                                Average Score: <b><? echo $avg; ?></b><br /> 
+							Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                                Average Score: <b><?php echo $avg; ?></b><br />
                                                 Last 10 Tests: (
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results4 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -210,7 +210,7 @@ echo $done;
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">  
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results5 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -220,10 +220,10 @@ $result2 = $db->sql_query("SELECT avg(score) FROM results5");
 $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 ?>						
-							Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                                Average Score: <b><? echo $avg; ?></b><br /> 
+							Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                                Average Score: <b><?php echo $avg; ?></b><br />
                                                 Last 10 Tests: (
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results5 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -243,7 +243,7 @@ echo $done;
 				       	<table width="100%" cellpadding="5">
                                        <tr>
 						<td colspan="2">  
-<?
+<?php
 $result = $db->sql_query("SELECT timestamp, score FROM results6 ORDER BY score DESC LIMIT 0,1");
 $row = $db->sql_fetchrow($result);
 $max = number_format($row["score"]);
@@ -253,10 +253,10 @@ $result2 = $db->sql_query("SELECT avg(score) FROM results6");
 $row2 = $db->sql_fetchrow($result2);
 $avg = number_format($row2["avg(score)"]);
 ?>
-							Best Score: <b><? echo $max; ?></b> on <i><? echo $date; ?></i><br />
-                                                Average Score: <b><? echo $avg; ?></b><br /> 
+							Best Score: <b><?php echo $max; ?></b> on <i><?php echo $date; ?></i><br />
+                                                Average Score: <b><?php echo $avg; ?></b><br />
                                                 Last 10 Tests: (
-<?
+<?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results6 ORDER BY testid DESC LIMIT 0,10");
 while ($row = mysql_fetch_assoc($result)) {
@@ -285,9 +285,9 @@ echo $done;
 		
 				<ul>
 				       <li><b>SERVER TIME:</b><br />
-					<? echo date("g:i a : l"); ?><br />
-                                  <? echo date("F d, Y"); ?></li>
-                                  <? echo $cpu2 ?></li>
+					<?php echo date("g:i a : l"); ?><br />
+                                  <?php echo date("F d, Y"); ?></li>
+                                  <?php echo $cpu2 ?></li>
                                  
 				
 				</ul>
@@ -295,12 +295,12 @@ echo $done;
 				<h3>Version Info</h3>
 				
 				<ul>
-                                  <li>PHPspeed: <b><? echo $ver['version']; ?></b><br />
-                                      <i>Tests Run: <b><? echo $ver['tests_run']; ?></b></i><br />
-                                      <i>Last Test: <? echo date("m/d/y", $ver['last_test']) ?></i> </li>
-					<li>PHP: <b><? echo phpversion(); ?></b></li>
-					<li>MySQL: <b><? printf(mysql_get_server_info()); ?></b></li>
-					<li><? echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+                                  <li>PHPspeed: <b><?php echo $ver['version']; ?></b><br />
+                                      <i>Tests Run: <b><?php echo $ver['tests_run']; ?></b></i><br />
+                                      <i>Last Test: <?php echo date("m/d/y", $ver['last_test']) ?></i> </li>
+					<li>PHP: <b><?php echo phpversion(); ?></b></li>
+					<li>MySQL: <b><?php printf(mysql_get_server_info()); ?></b></li>
+					<li><?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
                                  
 				</ul>
 
