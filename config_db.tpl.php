@@ -1,5 +1,4 @@
 <?php
-
 /***************************************************************************
  *
  *   PHPspeed.com | PHP Benchmarking Script
@@ -13,16 +12,14 @@
  *
  ***************************************************************************/
 
-//This is the login and password to use the scripts, change to whatever you like
+// This is the login and password to use the scripts, change to whatever you like
 $admin = "admin";
 $pass = "pass";
 
-//Enter your MySQL connection information below
+// Enter your MySQL connection information below
 $dbhost = "localhost";
 $dbuname = "ENTERYOURDBUSERNAME";
 $dbpass = "ENTERYOURPASSWORD";
 
-//This is the DB where all of the config and results data will be stored
+// This is the DB where all of the config and results data will be stored
 $dbname = "phpspeed";
-
-?>

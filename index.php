@@ -12,8 +12,6 @@
 define('IN_PHPSPEED', true);
 include "config_db.php";
 
-//if(file_exists("install/install.php")){ die( "You need to delete the install directory!" ); }
-
 include "inc/mysql.php";
 include "inc/functions.server.php";
 
@@ -66,7 +64,6 @@ if ($u == "$admin" && $p == "$pass") {
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
 	<link rel="stylesheet" type="text/css" media="screen" href="inc/Style.css" />
-       <!--[if gte IE 5.5000]><script type="text/javascript" language="javascript" src="inc/pngfix.inc.js"></script><![endif]-->
 </head>
 
 <body>

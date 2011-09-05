@@ -69,7 +69,6 @@ $show = isset($_GET['show']) ? htmlentities(addslashes($_GET['show'])) : '';
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
 	<link rel="stylesheet" type="text/css" media="screen" href="inc/Style.css" />
-       <!--[if gte IE 5.5000]><script type="text/javascript" language="javascript" src="inc/pngfix.inc.js"></script><![endif]-->
 
 </head>
 
