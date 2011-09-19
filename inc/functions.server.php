@@ -23,8 +23,10 @@ if (!defined('IN_PHPSPEED')) {
 
 //Display CPU information
 $cpuinfo = file("/proc/cpuinfo");
+$total_cpu=0;
 for ($i = 0; $i < count($cpuinfo); $i++) {
-		list($item, $data) = split(":", $cpuinfo[$i], 2);
+	if (trim($cpuinfo[$i]) != "") {
+		list($item, $data) = explode(":", $cpuinfo[$i], 2);
 		$item = chop($item);
 		$data = chop($data);
 		if ($item == "processor") {
@@ -39,6 +41,7 @@ for ($i = 0; $i < count($cpuinfo); $i++) {
 		}
 		if ($item == "cache size") { $cache = $data;}
 		if ($item == "bogomips") { $bogomips = $data;}
+	}
 }
 if($found_cpu != "yes") { $cpu_info .= " <b>unknown</b>"; } 
 $cpu_info .= " MHz\n";
@@ -53,7 +56,7 @@ $cpu_info .= " MHz\n";
 //THIS PROVIDES MEMORY INFO
 $meminfo = file("/proc/meminfo");
 for ($i = 0; $i < count($meminfo); $i++) {
-		list($item, $data) = split(":", $meminfo[$i], 2);
+		list($item, $data) = explode(":", $meminfo[$i], 2);
 		$item = chop($item);
 		$data = chop($data);
 		if ($item == "MemTotal") { $total_mem =$data;	}
@@ -63,6 +66,7 @@ for ($i = 0; $i < count($meminfo); $i++) {
 		if ($item == "Buffers") { $buffer_mem = $data; }
 		if ($item == "Cached") { $cache_mem = $data; }
 		if ($item == "MemShared") {$shared_mem = $data; }
+		if ($item == "Shmem") {$shared_mem = $data; }
 }
 $used_mem = ( $total_mem - $free_mem ); 
 $used_swap = ( $total_swap - $free_swap );
@@ -89,5 +93,21 @@ $fre_swap = ($free_swap/1024);
 $buf_mem = ($buffer_mem/1024);
 $cac_mem = ($cache_mem/1024);
 $sha_mem = ($shared_mem/1024);
+
+function buffer_flush(){
+
+    echo str_pad('', 512);
+    echo '<!-- -->';
+
+    if(ob_get_length()){
+
+        @ob_flush();
+        @flush();
+        @ob_end_flush();
+
+    }
+
+    @ob_start();
+}
 
 ?>
