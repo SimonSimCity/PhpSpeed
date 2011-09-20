@@ -308,7 +308,23 @@ if (TEMPLATE_SET == 'xml') {
 	$XPath = new XPath();
 	$XPath->importFromString($xml);
 	// let the page begin.
-	require_once(APP_ROOT . '/includes/system_header.php');
+
+	setlocale( LC_ALL, $text['locale'] );
+	global $XPath;
+
+	echo "<!DOCTYPE html>\n";
+
+	echo "<html>\n";
+	echo created_by();
+
+	echo "<head>\n";
+
+	echo "\t<meta http-equiv=\"content-language\" content=\"en-us\" />\n";
+	echo "\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />\n";
+
+	echo "\t<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"inc/Style.css\">\n";
+
+	echo "</head>\n";
 
 	//Start session test
 	if(isset($_SESSION['logged']) && $_SESSION['logged'] == 'yes') {
@@ -392,11 +408,74 @@ if (TEMPLATE_SET == 'xml') {
 	$tpl->pfp('out', 'form');
 
 	// finally our print our footer
-	//  if (PHPGROUPWARE == 1) {
-	//    $phpgw->common->phpgw_footer();
-	//  } else {
-	require_once(APP_ROOT . '/includes/system_footer.php');
-	//  }
+	$arrDirection = direction();
+
+	if( ! $hide_picklist ) {
+		echo "<center>\n";
+		$update_form = "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n" . "\t" . $text['template'] . ":&nbsp;\n" . "\t<select name=\"template\">\n";
+
+		$resDir = opendir( APP_ROOT . '/templates/' );
+		while( false !== ( $strFile = readdir( $resDir ) ) ) {
+			if( $strFile != 'CVS' && $strFile[0] != '.' && is_dir( APP_ROOT . '/templates/' . $strFile ) ) {
+				$arrFilelist[] = $strFile;
+			}
+		}
+		closedir( $resDir );
+		asort( $arrFilelist );
+		foreach( $arrFilelist as $strVal ) {
+			if( $_COOKIE['template'] == $strVal ) {
+				$update_form .= "\t\t<option value=\"" . $strVal . "\" SELECTED>" . $strVal . "</option>\n";
+			} else {
+				$update_form .= "\t\t<option value=\"" . $strVal . "\">" . $strVal . "</option>\n";
+			}
+		}
+		$update_form .= "\t\t<option value=\"xml\">XML</option>\n";
+		$update_form .= "\t\t<option value=\"wml\">WML - experimental</option>\n";
+		$update_form .= "\t\t<option value=\"random\"";
+		if( $_COOKIE['template'] == 'random' ) {
+			$update_form .= " SELECTED";
+		}
+		$update_form .= ">random</option>\n";
+		$update_form .= "\t</select>\n";
+
+		$update_form .= "\t&nbsp;&nbsp;" . $text['language'] . ":&nbsp;\n" . "\t<select name=\"lng\">\n";
+		unset( $filelist );
+		$resDir = opendir( APP_ROOT . "/includes/lang/" );
+		while( false !== ( $strFile = readdir( $resDir ) ) ) {
+			if ( $strFile[0] != '.' && is_file( APP_ROOT . "/includes/lang/" . $strFile ) && preg_match( "/\.php$/", $strFile ) ) {
+				$arrFilelist[] = preg_replace("/\.php$/", "", $strFile );
+			}
+		}
+		closedir($resDir);
+		asort( $arrFilelist );
+		foreach( $arrFilelist as $strVal ) {
+			if( $_COOKIE['lng'] == $strVal ) {
+				$update_form .= "\t\t<option value=\"" . $strVal . "\" SELECTED>" . $strVal . "</option>\n";
+			} else {
+				$update_form .= "\t\t<option value=\"" . $strVal . "\">" . $strVal . "</option>\n";
+			}
+		}
+		$update_form .= "\t\t<option value=\"browser\"";
+		if( $_COOKIE['lng'] == "browser" ) {
+			$update_form .= " SELECTED";
+		}
+		$update_form .= ">browser default</option>\n\t</select>\n";
+
+		$update_form .= "\t<input type=\"submit\" value=\"" . $text['submit'] . "\">\n" . "</form>\n";
+		echo $update_form;
+		echo "</center>\n";
+	} else {
+		echo "<br>\n";
+	}
+
+	//Section below added to bottom of template file instead so it would appear 'above' the common footer
+
+	//echo "<hr>\n";
+	//echo "<table width=\"100%\">\n\t<tr>\n";
+	//echo "\t\t<td align=\"" . $arrDirection['left'] . "\"><font size=\"-1\">" . $text['created'] . "&nbsp;<a href=\"http://phpsysinfo.sourceforge.net\" target=\"_blank\">phpSysInfo-" . $VERSION . "</a>" . strftime( $text['gen_time'], time() ) . "</font></td>\n";
+	//echo "\t\t<td align=\"" . $arrDirection['right'] . "\"><font size=\"-1\">" . round( ( array_sum( explode( " ", microtime() ) ) - $startTime ), 4 ). " sec</font></td>\n";
+	//echo "\t</tr>\n</table>\n";
+	//echo "\n</body>\n</html>\n";
 }
 
 ?>
