@@ -67,7 +67,7 @@ if ($indb == "2") {
 	$scriptfile = false;
 	foreach($lines as $line) {
 		$line = trim($line);
-		if(!ereg('^--', $line))	{
+		if(!preg_match('/^--/', $line))	{
 			$scriptfile .= " ".$line;
 		}
 	}
