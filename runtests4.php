@@ -57,7 +57,7 @@ if ($u == "$admin" && $p == "$pass"){
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -271,7 +271,7 @@ if ($test != 'go') {
 
 		function show_summary($base, &$results, $csv_file) {
 			$total_time = 0.0;
-			foreach ($results as $test => $time) {
+			foreach ($results as $time) {
 				$total_time += $time;
 			}
 			if ($total_time <= 0.0) {
@@ -284,12 +284,12 @@ if ($test != 'go') {
 			$score = (float) $base * 90 / $total_time;
 
 			//Insert into DB
-			global $db, $dbhost, $dbuname, $dbpass, $dbname, $ver, $cpu_info, $uptime, $tot_mem, $percent_used, $new_tests;
+			global $db, $ver, $cpu_info, $uptime, $tot_mem, $percent_used, $new_tests;
 
-			$result = $db->sql_query("INSERT INTO results4
+			$db->sql_query("INSERT INTO results4
     VALUES ('','" . time() . "','$cpu_info','$uptime','" . round(($tot_mem/1024),2) . " GB -  $percent_used % Used','{$ver['version']}','" . phpversion() . "','" . mysql_get_server_info() . "','" . $_SERVER['SERVER_SOFTWARE'] . "','" . serialize($results) . "','" . count($results) . "','$base','" . round($total_time) . "','" . round($score) . "','" . $_SERVER['HTTP_HOST'] . "')");
 
-			$result2 = $db->sql_query("UPDATE phpspeed_config SET tests_run ='$new_tests', last_test = " . time() . "");
+			$db->sql_query("UPDATE phpspeed_config SET tests_run ='$new_tests', last_test = " . time() . "");
 
 			echo
 			'<br /><br />Tests      : ' . count($results) . "\n" .
@@ -365,7 +365,6 @@ if ($test != 'go') {
 }
 
 ?>
-   </div>
 
 </body>
 </html>

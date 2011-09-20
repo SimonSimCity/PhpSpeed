@@ -34,7 +34,7 @@
 
                             {nologin}
 
-                         <br /><div style="font-size:9pt; font-face: tahoma;" align="center">Created by <a href="http://phpsysinfo.sourceforge.net/">phpSysInfo</a></div>
+                         <br /><div style="font-size:9pt; font-family: tahoma;" align="center">Created by <a href="http://phpsysinfo.sourceforge.net/">phpSysInfo</a></div>
                              
 </body>
 </html>

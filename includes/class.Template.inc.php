@@ -97,7 +97,7 @@
 			else
 			{
 				reset($handle);
-				while(list($h, $f) = each($handle))
+				foreach($handle as $h => $f)
 				{
 					$this->file[$h] = $this->filename($f);
 				}
@@ -151,7 +151,7 @@
 			else
 			{
 				reset($varname);
-				while(list($k, $v) = each($varname))
+				foreach($varname as $k => $v)
 				{
 					if (!empty($k))
 					{
@@ -179,7 +179,7 @@
 
 			$str = $this->get_var($handle);
 			reset($this->varkeys);
-			while (list($k, $v) = each($this->varkeys))
+			foreach($this->varkeys as $k => $v)
 			{
 				$str = str_replace($v, $this->varvals[$k], $str);
 			}
@@ -272,7 +272,7 @@
 			else
 			{
 				reset($varname);
-				while(list($k, $v) = each($varname))
+				foreach($varname as $k => $v)
 				{
 					$result[$k] = $this->varvals[$k];
 				}

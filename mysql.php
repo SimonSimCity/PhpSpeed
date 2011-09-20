@@ -59,7 +59,7 @@ $show = isset($_GET['show']) ? htmlentities(addslashes($_GET['show'])) : '';
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -128,7 +128,7 @@ echo "MySQL Status | <a href=\"$self\">Show Variables</a></th></tr><tr></th></tr
 
 $result = mysql_query('SHOW /*!50002 GLOBAL */ STATUS', $link);
 $p = 1;
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
 	$p ++;
 	if($p%2==0){
 		echo '</tr><tr>';
@@ -154,7 +154,7 @@ echo "MySQL Variables | <a href=\"$self?show=1\">Show Status</a></th></tr><tr>";
 
 $result = mysql_query('SHOW VARIABLES', $link);
 $p = 1;
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
 	$p ++;
 
 	if($p%2==0){

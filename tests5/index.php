@@ -2,7 +2,7 @@
 include "../config_db.php";
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -11,26 +11,24 @@ include "../config_db.php";
 	<meta http-equiv="content-language" content="en-us" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
-	<link rel="stylesheet" type="text/css" media="screen" href="../screen.css" />
-	<!--[if lt ie 7]><link rel="stylesheet" type="text/css" media="screen" href="../ie-win.css" /><![endif]-->
 </head>
 
-<body id="babout">
+<body>
 
-	<div id="header">
+	<header>
 	
 		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?></h1>
 	
-	</div>
+	</header>
 	
 	<div id="navigation">
 	
 		<ul>
-			<li id="lhome"><a href="/">&raquo; Home</a></li>
-			<li id="lhome"><a href="/">&raquo; View Results</a></li>
-			<li id="lhome"><a href="/">&raquo; PHP Info</a></li>
-                     <li id="lhome"><a href="/">&raquo; MySQL Info</a></li>
-                     <li id="lhome"><a href="/">&raquo; System Info</a></li>
+			<li><a href="/">&raquo; Home</a></li>
+			<li><a href="/">&raquo; View Results</a></li>
+			<li><a href="/">&raquo; PHP Info</a></li>
+                     <li><a href="/">&raquo; MySQL Info</a></li>
+                     <li><a href="/">&raquo; System Info</a></li>
 		</ul>
 	
 	</div>
@@ -47,7 +45,7 @@ include "../config_db.php";
 				
 			           <dt>Benchmark #1</dt>
 					<dd>
-                                         <b><u>Synthetic PHP BenchMark:</u></b>&nbsp;
+                                         <b>Synthetic PHP BenchMark:</b>&nbsp;
 					
 							This set of benchmarks is designed to test various functions within PHP.  The tests are  
 							each run multiple times and the average of each, along with the total is
@@ -59,7 +57,7 @@ include "../config_db.php";
                                    <dt>Benchmark #2</dt>
 
 				       <dd>
-					       <b><u>Synthetic MySQL BenchMark:</u></b>&nbsp;
+					       <b>Synthetic MySQL BenchMark:</b>&nbsp;
 
                                                 This set of benchmarks will measure the speed of MySQL through the performance of several
                                                 DB reads and writes using MySQL's built in benchmark features.  It will also test your connection 
@@ -69,7 +67,7 @@ include "../config_db.php";
                                   <dt>Benchmark #3</dt>
 
 					<dd>
-                                         <b><u>Synthetic Read/Write BenchMark:</u></b>&nbsp;
+                                         <b>Synthetic Read/Write BenchMark:</b>&nbsp;
                                          
                                                 PHPSpeed reads and writes multiple lines of data to a txt file to test the 
                                                 read and write speed of PHP.  This is a good way to validate if system wide tweaks are improving
@@ -79,7 +77,7 @@ include "../config_db.php";
                                   </dd>
 					<dt>Benchmark #4</dt>
 					<dd>
-                                         <b><u>Real World PHP BenchMark:</u></b>&nbsp;
+                                         <b>Real World PHP BenchMark:</b>&nbsp;
                                
                                                 This benchmark measures the load time of 4 PHP pages of various sizes.  There are no DB calls, this  
                                                 test will measure the real world time for someone to load a PHP page on your server. 
@@ -88,20 +86,20 @@ include "../config_db.php";
                                   </dd>
 					<dt>Benchmark #5</dt>
 					<dd>
-                                         <b><u>Real World PHP & MySQL BenchMark:</u></b>&nbsp;
+                                         <b>Real World PHP & MySQL BenchMark:</b>&nbsp;
                                   
                                                 This benchmark measures the time to load 4 PHP pages WITH MySQL DB calls. MySQL cacheing will positively affect 
                                                 the outcome of this test.  You can measure the benefit of cacheing by running the test with cacheing enabled and 
-                                                disabled. </em> <a href="/">&raquo; Start Test</a>
+                                                disabled. <a href="/">&raquo; Start Test</a>
                                          
                                   </dd>
                                     <dt>Benchmark #6</dt>
 					<dd>
-                                         <b><u>Find out your PHPspeed!</u></b>&nbsp;
+                                         <b>Find out your PHPspeed!</b>&nbsp;
                                   
                                                 This is our all-in-one benchmark that will use sections of all of the above tests to give you a thorough
                                                 indication of the speed of your server.  Compare your PHPspeed to other webmasters with similar configurations
-                                                to determine if you are maximizing your performance. </em>  <a href="/">&raquo; Start Test</a>
+                                                to determine if you are maximizing your performance. <a href="/">&raquo; Start Test</a>
                                         
                                   </dd>
 				
@@ -148,16 +146,6 @@ mysql_close($con);
 				<ul>
 					<li>Tests Run:</li>
 					<li>Last Test:</li>
-				</ul>
-
-                           <h3>Powered by Links</h3>
-                           <ul>
-                                 <center>
-                                  <img src="../images/phpspeed.jpg" width="120" height="60" vspace="4">
-                                  <img src="../images/phpspeedblu.png" width="80" height="15" vspace="4">
-                                  <img src="../images/phpspeedgre.png" width="80" height="15" vspace="4">
-                                  <img src="../images/phpspeedred.png" width="80" height="15" vspace="4">
-                                 </center>
 				</ul>
 			</div>
 		

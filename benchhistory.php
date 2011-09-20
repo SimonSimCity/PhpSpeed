@@ -109,7 +109,7 @@ if ($csv == 'yes') {
 	$csv_output .= "\015\012";
 	$result = $db->sql_query("SELECT * FROM results$r ORDER BY testid DESC");
 
-	while($row = mysql_fetch_array($result)) {
+	while(($row = mysql_fetch_array($result))) {
 		$csv_output .= '"'.$row['testid'].'","'. date("m/d/y",$row['timestamp']).'","'.$row['cpu'].'","'.$row['uptime'].'","'.$row['memory'].'","'.$row['phpspeed_version'].'","'.$row['php_version'].'","'.$row['mysql_version'].'","'.$row['server_software'].'","'. $row['test_results'].'","'.$row['tests_run'].'","'.$row['iterations'].'","'.$row['total_time'].'","'.$row['score'].'","'.$row['site'].'"';
 		$csv_output .= "\015\012";
 	}
@@ -124,7 +124,7 @@ if ($csv == 'yes') {
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -166,7 +166,7 @@ if (($del == 'yes') && ($conf != '1')) {
 
 			      <table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr>
-                                   <td align="left" class="row2"><font color="yellow"> Are you sure you want to delete all results for Test # <?php echo $r; ?>  &nbsp;<a href="benchhistory.php?conf=1&bench=<?php echo $r; ?>"><b>YES</b></a></td>
+                                   <td align="left" class="row2"><span style="color:yellow"> Are you sure you want to delete all results for Test # <?php echo $r; ?>  &nbsp;<a href="benchhistory.php?conf=1&bench=<?php echo $r; ?>"><b>YES</b></a></span></td>
                                 </tr>
 			      </table><br />
 
@@ -199,7 +199,7 @@ if (($del == 'yes') && ($conf != '1')) {
 
 			      <table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr>
-                                   <td align="left" class="row2"><font color="yellow">SUCCESS!  All data has been deleted.</td>
+                                   <td align="left" class="row2"><span style="color:yellow">SUCCESS!  All data has been deleted.</span></td>
                                 </tr>
 			      </table><br />
 <?php
@@ -221,7 +221,7 @@ if (($del == 'yes') && ($conf != '1')) {
 				<table width="94%" cellpadding="9" cellspacing="1" align="center" class="forumline">
                                 <tr><th align="center">Date</th><th align="center">PHPspeed</th><th align="center">PHP</th><th align="center">MySQL</th><th align="center">Tests</th><th align="center">Iterations</th><th align="center">Time</th><th align="center">Score</th></tr>
 <?php
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
 	echo "<tr><td class=\"row1\">" . date("m/d/y", $row["timestamp"]) . "</td><td class=\"row1\">" . $row["phpspeed_version"] . "</td><td class=\"row1\">" . $row["php_version"] . "</td><td class=\"row1\">" . $row["mysql_version"] . "</td><td class=\"row1\" align=\"center\">" . $row["tests_run"] . "</td><td class=\"row1\" align=\"center\">" . $row["iterations"] . "</td><td class=\"row1\" align=\"center\">" . $row["total_time"] . "</td><td class=\"row1\" align=\"center\">" . $row["score"] . "</td></tr>";
 }
 ?>

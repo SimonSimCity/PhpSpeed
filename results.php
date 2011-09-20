@@ -29,7 +29,7 @@ $ver = mysql_fetch_assoc($result);
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -39,27 +39,25 @@ $ver = mysql_fetch_assoc($result);
 	<meta http-equiv="content-language" content="en-us" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<link rel="start" title="Home" href="http://www.phpspeed.com/" />
-	<link rel="stylesheet" type="text/css" media="screen" href="inc/screen.css" />
-	<!--[if lt ie 7]><link rel="stylesheet" type="text/css" media="screen" href="inc/ie-win.css" /><![endif]-->
 
 </head>
 
-<body id="babout">
+<body>
 
-	<div id="header">
+	<header>
 	
 		<h1>PHPspeed | <?php echo $_SERVER['HTTP_HOST']; ?> | DEMO</h1>
 	
-	</div>
+	</header>
 	
 	<div id="navigation">
 	
 		<ul>
-			<li id="lhome"><a href="index.php">&raquo; Home</a></li>
-			<li id="lhome"><a href="results.php">&raquo; View Results</a></li>
-			<li id="lhome"><a href="phpinfo.php">&raquo; PHP Info</a></li>
-                     <li id="lhome"><a href="mysql.php">&raquo; MySQL Info</a></li>
-                     <li id="lhome"><a href="info.php">&raquo; System Info</a></li>
+			<li><a href="index.php">&raquo; Home</a></li>
+			<li><a href="results.php">&raquo; View Results</a></li>
+			<li><a href="phpinfo.php">&raquo; PHP Info</a></li>
+                     <li><a href="mysql.php">&raquo; MySQL Info</a></li>
+                     <li><a href="info.php">&raquo; System Info</a></li>
 		</ul>
 	
 	</div>
@@ -71,8 +69,7 @@ $ver = mysql_fetch_assoc($result);
 			<div id="content">
 
                             <h2>Test Results | DEMO</h2>
-				<dl>
-				
+
 					<h6>Synthetic PHP BenchMark:</h6>
 				       	<table width="100%" cellpadding="5">
                                        <tr>
@@ -95,7 +92,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results1 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -128,7 +125,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results2 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -161,7 +158,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results3 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -194,7 +191,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results4 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -226,7 +223,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results5 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -259,7 +256,7 @@ $avg = number_format($row2["avg(score)"]);
 <?php
 $line = "";
 $result = $db->sql_query("SELECT score FROM results6 ORDER BY testid DESC LIMIT 0,10");
-while ($row = mysql_fetch_assoc($result)) {
+while (($row = mysql_fetch_assoc($result))) {
     $line .= $row['score'] . ", ";
 }
 $done = rtrim ($line, ', ');
@@ -270,8 +267,6 @@ echo $done;
                                             </td>
                                          </tr>
 					</table>
-				
-				</dl>
 				
 			</div>
 		
@@ -287,9 +282,6 @@ echo $done;
 				       <li><b>SERVER TIME:</b><br />
 					<?php echo date("g:i a : l"); ?><br />
                                   <?php echo date("F d, Y"); ?></li>
-                                  <?php echo $cpu2 ?></li>
-                                 
-				
 				</ul>
 
 				<h3>Version Info</h3>
@@ -305,14 +297,12 @@ echo $done;
 				</ul>
 
                            <h3>Dynamic Scorecard</h3>
-                           <ul>
-                                 <center>
+							<div style="text-align: center;">
                                   <a href="http://www.phpspeed.com/phpbenchmark.php"><img src="inc/phpspeed.php" vspace="6" border="0" alt="php benchmark"></a><br />
                                   <a href="http://www.phpspeed.com/mysqlbenchmark.php"><img src="inc/mysqlspeed.php" vspace="6" border="0" alt="mysql benchmark"></a><br />
                                   <a href="http://www.phpspeed.com/drivebenchmark.php"><img src="inc/drivespeed.php" vspace="6" border="0" alt="drive benchmark"></a><br />
                                   <a href="http://www.phpspeed.com/serverbenchmark.php"><img src="inc/serverspeed.php" vspace="6" border="0" alt="server benchmark"></a><br />
-                                 </center>
-				</ul>
+                                 </div>
 			
 			</div>
 		

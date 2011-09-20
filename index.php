@@ -54,7 +54,7 @@ if ($u == "$admin" && $p == "$pass") {
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -235,10 +235,10 @@ $num = mysql_num_rows($result);
           <td class="row1">Last Test: <?php echo date("m/d/y", $ver['last_test']) ?></td>
       </tr>
        <tr>
-          <td class="row1"><a href="http://www.phpspeed.com/phpbenchmark.php"><img src="inc/phpspeed.php" vspace="6" border="0" alt="php benchmark"></a></td>
-          <td class="row1"><a href="http://www.phpspeed.com/mysqlbenchmark.php"><img src="inc/mysqlspeed.php" vspace="6" border="0" alt="mysql benchmark"></a></td>
-          <td class="row1"> <a href="http://www.phpspeed.com/serverbenchmark.php"><img src="inc/serverspeed.php" vspace="6" border="0" alt="server benchmark"></a></td>
-          <td class="row1"><a href="http://www.phpspeed.com/drivebenchmark.php"><img src="inc/drivespeed.php" vspace="6" border="0" alt="drive benchmark"></a></td>
+          <td class="row1"><a href="http://www.phpspeed.com/phpbenchmark.php"><img src="inc/phpspeed.php" border="0" alt="php benchmark"></a></td>
+          <td class="row1"><a href="http://www.phpspeed.com/mysqlbenchmark.php"><img src="inc/mysqlspeed.php" border="0" alt="mysql benchmark"></a></td>
+          <td class="row1"> <a href="http://www.phpspeed.com/serverbenchmark.php"><img src="inc/serverspeed.php" border="0" alt="server benchmark"></a></td>
+          <td class="row1"><a href="http://www.phpspeed.com/drivebenchmark.php"><img src="inc/drivespeed.php" border="0" alt="drive benchmark"></a></td>
       </tr>
 </table>
 

@@ -57,7 +57,7 @@ if ($u == "$admin" && $p == "$pass"){
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
@@ -272,7 +272,7 @@ if ($test != 'go') {
 
 		function show_summary($base, &$results, $csv_file) {
 			$total_time = 0.0;
-			foreach ($results as $test => $time) {
+			foreach ($results as $time) {
 				$total_time += $time;
 			}
 			if ($total_time <= 0.0) {
@@ -289,10 +289,9 @@ if ($test != 'go') {
 
 			$db = new sql_db($dbhost, $dbuname, $dbpass, $dbname, false);
 
-			$result = $db->sql_query("INSERT INTO results2
+			$db->sql_query("INSERT INTO results2
     VALUES ('','" . time() . "','$cpu_info','$uptime','" . round(($tot_mem/1024),2) . " GB -  $percent_used % Used','{$ver['version']}','" . phpversion() . "','" . mysql_get_server_info() . "','" . $_SERVER['SERVER_SOFTWARE'] . "','" . serialize($results) . "','" . count($results) . "','$base','" . round($total_time) . "','" . round($score) . "','" . $_SERVER['HTTP_HOST'] . "')");
 
-////		mysql_close ($result);
 
 			echo
 			'<br /><br />Tests: ' . count($results) . "\n" .
@@ -370,7 +369,6 @@ if ($test != 'go') {
 }
 
 ?>
-   </div>
 
 </body>
 </html>
