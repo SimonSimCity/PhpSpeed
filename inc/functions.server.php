@@ -94,20 +94,4 @@ $buf_mem = ($buffer_mem/1024);
 $cac_mem = ($cache_mem/1024);
 $sha_mem = ($shared_mem/1024);
 
-function buffer_flush(){
-
-    echo str_pad('', 512);
-    echo '<!-- -->';
-
-    if(ob_get_length()){
-
-        @ob_flush();
-        @flush();
-        @ob_end_flush();
-
-    }
-
-    @ob_start();
-}
-
 ?>
