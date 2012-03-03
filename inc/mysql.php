@@ -60,7 +60,7 @@ class sql_db
 		}
 		else
 		{
-			return false;
+			die('Could not connect to the Mysql server !!');
 		}
 	}
 
