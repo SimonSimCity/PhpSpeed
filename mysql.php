@@ -1,4 +1,27 @@
 <?php
+/**
+*  PHPspeed
+*
+* @author     http://www.phpspeed.com
+* @copyright  2006 http://www.phpspeed.com
+* @license    GPLv2 (or later)
+*/
+
+/**
+ * 2012/03/03 Modified by Kenji Suzuki <https://github.com/kenjis/>
+ */
+
+/***************************************************************************
+ *
+*   PHPspeed.com | PHP Benchmarking Script
+*   http://www.phpspeed.com
+*
+*   Sat Mar 17, 2007 3:53 pm
+*   PHPspeed is now GPL licensed!!
+*   See http://www.phpspeed.com/phpspeed-forums-f1/phpspeed-is-now-gpl-licensed-t18.html
+*
+***************************************************************************/
+
 /***************************************************************************
 *
 *   PHPspeed.com | PHP Benchmarking Script
