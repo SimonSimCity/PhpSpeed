@@ -105,8 +105,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == 'yes') {
 	}
 	else
 	{
-		if( $user == 'root' ) {
-			if( $password == '') {
+		if( $dbuname == 'root' ) {
+			if( $dbpass == '') {
 				echo "<font color=red><b>Your user and password are the install default (user:root and password is blank), change it !!</b></font><br><br>";
 			}
 
@@ -160,7 +160,7 @@ while (($row = mysql_fetch_assoc($result))) {
 	if($p%2==0){
 		echo '</tr><tr>';
 	}
-	echo '<td class=row1><span class=gen>&nbsp;' . $row['Variable_name'] . '</span></td><td class=row1><span class=gen>&nbsp;' . number_format($row['Value']) . "</span></td>";
+	echo '<td class=row1><span class=gen>&nbsp;' . $row['Variable_name'] . '</span></td><td class=row1><span class=gen>&nbsp;' . number_format((double) $row['Value']) . "</span></td>";
 }
 		}
 
