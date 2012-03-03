@@ -55,6 +55,13 @@ $cpu_info .= " MHz\n";
 
 //THIS PROVIDES MEMORY INFO
 $meminfo = file("/proc/meminfo");
+$total_mem  = 0;
+$free_mem   = 0;
+$total_swap = 0;
+$free_swap  = 0;
+$buffer_mem = 0;
+$cache_mem  = 0;
+$shared_mem = 0;
 for ($i = 0; $i < count($meminfo); $i++) {
 		list($item, $data) = explode(":", $meminfo[$i], 2);
 		$item = chop($item);
