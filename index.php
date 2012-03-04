@@ -21,13 +21,14 @@ $db = new sql_db($dbhost, $dbuname, $dbpass, $dbname, false);
 
 $sql = "SELECT * FROM phpspeed_config";
 $result = $db->sql_query($sql);
-$ver = mysql_fetch_assoc($result);
 
-if ($ver == "")
+if ($result === false)
 {
 	header("Location:install/install.php");
 	die;
 }
+
+$ver = mysql_fetch_assoc($result);
 
 session_start();
 
