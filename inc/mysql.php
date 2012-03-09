@@ -1,4 +1,27 @@
 <?php
+/**
+*  PHPspeed
+*
+* @author     http://www.phpspeed.com
+* @copyright  2006 http://www.phpspeed.com
+* @license    GPLv2 (or later)
+*/
+
+/**
+ * 2012/03/03 Modified by Kenji Suzuki <https://github.com/kenjis/>
+ */
+
+/***************************************************************************
+ *
+*   PHPspeed.com | PHP Benchmarking Script
+*   http://www.phpspeed.com
+*
+*   Sat Mar 17, 2007 3:53 pm
+*   PHPspeed is now GPL licensed!!
+*   See http://www.phpspeed.com/phpspeed-forums-f1/phpspeed-is-now-gpl-licensed-t18.html
+*
+***************************************************************************/
+
 /***************************************************************************
  *
  *   PHPspeed.com | PHP Benchmarking Script
@@ -38,21 +61,21 @@ class sql_db
 
 		if($this->persistency)
 		{
-			$this->db_connect_id = @mysql_pconnect($this->server, $this->user, $this->password);
+			$this->db_connect_id = mysql_pconnect($this->server, $this->user, $this->password);
 		}
 		else
 		{
-			$this->db_connect_id = @mysql_connect($this->server, $this->user, $this->password);
+			$this->db_connect_id = mysql_connect($this->server, $this->user, $this->password);
 		}
 		if($this->db_connect_id)
 		{
 			if($database != "")
 			{
 				$this->dbname = $database;
-				$dbselect = @mysql_select_db($this->dbname);
+				$dbselect = mysql_select_db($this->dbname);
 				if(!$dbselect)
 				{
-					@mysql_close($this->db_connect_id);
+					mysql_close($this->db_connect_id);
 					$this->db_connect_id = $dbselect;
 				}
 			}
@@ -60,7 +83,7 @@ class sql_db
 		}
 		else
 		{
-			return false;
+			die('Could not connect to the Mysql server !!');
 		}
 	}
 
@@ -73,9 +96,9 @@ class sql_db
 		{
 			if($this->query_result)
 			{
-				@mysql_free_result($this->query_result);
+				mysql_free_result($this->query_result);
 			}
-			$result = @mysql_close($this->db_connect_id);
+			$result = mysql_close($this->db_connect_id);
 			return $result;
 		}
 		else
@@ -94,7 +117,7 @@ class sql_db
 		if($query != "")
 		{
 			$this->num_queries++;
-			$this->query_result = @mysql_query($query, $this->db_connect_id);
+			$this->query_result = mysql_query($query, $this->db_connect_id);
 		}
 		if($this->query_result)
 		{
@@ -104,7 +127,7 @@ class sql_db
 		}
 		else
 		{
-			return ( $transaction == END_TRANSACTION ) ? true : false;
+			return false;
 		}
 	}
 
@@ -119,7 +142,7 @@ class sql_db
 		}
 		if($query_id)
 		{
-			$result = @mysql_num_rows($query_id);
+			$result = mysql_num_rows($query_id);
 			return $result;
 		}
 		else
@@ -131,7 +154,7 @@ class sql_db
 	{
 		if($this->db_connect_id)
 		{
-			$result = @mysql_affected_rows($this->db_connect_id);
+			$result = mysql_affected_rows($this->db_connect_id);
 			return $result;
 		}
 		else
@@ -147,7 +170,7 @@ class sql_db
 		}
 		if($query_id)
 		{
-			$result = @mysql_num_fields($query_id);
+			$result = mysql_num_fields($query_id);
 			return $result;
 		}
 		else
@@ -163,7 +186,7 @@ class sql_db
 		}
 		if($query_id)
 		{
-			$result = @mysql_field_name($query_id, $offset);
+			$result = mysql_field_name($query_id, $offset);
 			return $result;
 		}
 		else
@@ -179,7 +202,7 @@ class sql_db
 		}
 		if($query_id)
 		{
-			$result = @mysql_field_type($query_id, $offset);
+			$result = mysql_field_type($query_id, $offset);
 			return $result;
 		}
 		else
@@ -195,9 +218,9 @@ class sql_db
 		}
 		if($query_id)
 		{
-////			$this->row[$query_id] = @mysql_fetch_array($query_id);
+////			$this->row[$query_id] = mysql_fetch_array($query_id);
 //			return $this->row[$query_id];
-			return @mysql_fetch_array($query_id);
+			return mysql_fetch_array($query_id);
 		}
 		else
 		{
@@ -214,7 +237,7 @@ class sql_db
 		{
 			unset($this->rowset[$query_id]);
 			unset($this->row[$query_id]);
-			while($this->rowset[$query_id] = @mysql_fetch_array($query_id))
+			while($this->rowset[$query_id] = mysql_fetch_array($query_id))
 			{
 				$result[] = $this->rowset[$query_id];
 			}
@@ -235,7 +258,7 @@ class sql_db
 		{
 			if($rownum > -1)
 			{
-				$result = @mysql_result($query_id, $rownum, $field);
+				$result = mysql_result($query_id, $rownum, $field);
 			}
 			else
 			{
@@ -272,7 +295,7 @@ class sql_db
 		}
 		if($query_id)
 		{
-			$result = @mysql_data_seek($query_id, $rownum);
+			$result = mysql_data_seek($query_id, $rownum);
 			return $result;
 		}
 		else
@@ -283,7 +306,7 @@ class sql_db
 	function sql_nextid(){
 		if($this->db_connect_id)
 		{
-			$result = @mysql_insert_id($this->db_connect_id);
+			$result = mysql_insert_id($this->db_connect_id);
 			return $result;
 		}
 		else
@@ -302,7 +325,7 @@ class sql_db
 			unset($this->row[$query_id]);
 			unset($this->rowset[$query_id]);
 
-			@mysql_free_result($query_id);
+			mysql_free_result($query_id);
 
 			return true;
 		}
@@ -313,8 +336,8 @@ class sql_db
 	}
 	function sql_error($query_id = 0)
 	{
-		$result["message"] = @mysql_error($this->db_connect_id);
-		$result["code"] = @mysql_errno($this->db_connect_id);
+		$result["message"] = mysql_error($this->db_connect_id);
+		$result["code"] = mysql_errno($this->db_connect_id);
 
 		return $result;
 	}

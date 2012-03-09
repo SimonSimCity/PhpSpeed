@@ -1,4 +1,27 @@
 <?php
+/**
+*  PHPspeed
+*
+* @author     http://www.phpspeed.com
+* @copyright  2006 http://www.phpspeed.com
+* @license    GPLv2 (or later)
+*/
+
+/**
+ * 2012/03/03 Modified by Kenji Suzuki <https://github.com/kenjis/>
+ */
+
+/***************************************************************************
+ *
+*   PHPspeed.com | PHP Benchmarking Script
+*   http://www.phpspeed.com
+*
+*   Sat Mar 17, 2007 3:53 pm
+*   PHPspeed is now GPL licensed!!
+*   See http://www.phpspeed.com/phpspeed-forums-f1/phpspeed-is-now-gpl-licensed-t18.html
+*
+***************************************************************************/
+
 /***************************************************************************
 *
 *   PHPspeed.com | PHP Benchmarking Script
@@ -105,8 +128,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == 'yes') {
 	}
 	else
 	{
-		if( $user == 'root' ) {
-			if( $password == '') {
+		if( $dbuname == 'root' ) {
+			if( $dbpass == '') {
 				echo "<font color=red><b>Your user and password are the install default (user:root and password is blank), change it !!</b></font><br><br>";
 			}
 
@@ -160,7 +183,7 @@ while (($row = mysql_fetch_assoc($result))) {
 	if($p%2==0){
 		echo '</tr><tr>';
 	}
-	echo '<td class=row1><span class=gen>&nbsp;' . $row['Variable_name'] . '</span></td><td class=row1><span class=gen>&nbsp;' . number_format($row['Value']) . "</span></td>";
+	echo '<td class=row1><span class=gen>&nbsp;' . $row['Variable_name'] . '</span></td><td class=row1><span class=gen>&nbsp;' . number_format((double) $row['Value']) . "</span></td>";
 }
 		}
 

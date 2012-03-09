@@ -21,13 +21,14 @@ $db = new sql_db($dbhost, $dbuname, $dbpass, $dbname, false);
 
 $sql = "SELECT * FROM phpspeed_config";
 $result = $db->sql_query($sql);
-$ver = mysql_fetch_assoc($result);
 
-if ($ver == "")
+if ($result === false)
 {
 	header("Location:install/install.php");
 	die;
 }
+
+$ver = mysql_fetch_assoc($result);
 
 session_start();
 
@@ -232,7 +233,7 @@ $num = mysql_num_rows($result);
           <td class="row1">PHP ver: <b><?php echo phpversion(); ?></b></td>
           <td class="row1">MySQL ver: <b><?php printf(mysql_get_server_info()); ?></b></td>
           <td class="row1">Server: <b><?php echo $_SERVER['SERVER_SOFTWARE']; ?></b></td>
-          <td class="row1">Last Test: <?php echo date("m/d/y", $ver['last_test']) ?></td>
+          <td class="row1">Last Test: <?php echo date("m/d/y", (int) $ver['last_test']) ?></td>
       </tr>
        <tr>
           <td class="row1"><a href="http://www.phpspeed.com/phpbenchmark.php"><img src="inc/phpspeed.php" border="0" alt="php benchmark"></a></td>
